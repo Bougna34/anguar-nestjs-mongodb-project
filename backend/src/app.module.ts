@@ -10,7 +10,8 @@ import { AppService } from './app.service';
         ConfigModule.forRoot({
             isGlobal: true,
         }),
-        MongooseModule.forRoot(process.env.MONGODB_URI),
+        // Ajouter une vérification pour éviter l'erreur undefined
+        MongooseModule.forRoot(process.env.MONGODB_URI || 'mongodb://localhost:27017/defaultdb'),
     ],
     controllers: [AppController],
     providers: [AppService],

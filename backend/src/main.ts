@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
 
@@ -6,7 +7,7 @@ async function bootstrap() {
 
     // Config du CORS pour Angular
     app.enableCors({
-        origin: 'https://localhost:4200',
+        origin: 'http://localhost:4200',
         credentials: true
     });
 

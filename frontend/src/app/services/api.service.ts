@@ -6,12 +6,21 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class ApiService {
-  private baseUrl = 'http://localhost:3000';
+    private baseUrl = 'http://localhost:3000';
 
-  constructor(private http: HttpClient) {}
+    constructor(private http: HttpClient) {}
 
-  // Exemple de méthode
-  getData(): Observable<any> {
-    return this.http.get(`${this.baseUrl}/api/data`);
-  }
+    // Test de connexion avec le backend
+    getHello(): Observable<string> {
+        return this.http.get(`${this.baseUrl}`, { responseType: 'text' });
+    }
+
+    // Exemple de méthodes API
+    getData(): Observable<any> {
+        return this.http.get(`${this.baseUrl}/api/data`);
+    }
+
+    postData(data: any): Observable<any> {
+        return this.http.post(`${this.baseUrl}/api/data`, data);
+    }
 }
