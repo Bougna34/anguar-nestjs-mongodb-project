@@ -1,3 +1,11 @@
+.search-bar {
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+    align-items: center;
+    margin: 0 10px 0 10px;
+}
+
 .results {
     display: grid;
     column-gap: 14px;

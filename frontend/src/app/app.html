@@ -33,11 +33,13 @@
 </style>
 
 <main class="main">
-    <a [routerLink]="['/']">
-        <header class="brand-name">
-            <img class="brand-logo" src="/frontend/assets/logo.svg" alt="logo" aria-hidden="true">
-        </header>
-    </a>
-    <app-home></app-home>
+    <header class="brand-name">
+        <a [routerLink]="['/']" class="brand-img">
+            <img class="brand-logo" src="assets/logo.svg" alt="logo" aria-hidden="true">
+        </a>
+        <h1 class="page-title">Angular / NestJS  / MongoDB</h1>
+        <p class="page-subtitle">Projet d'apprentissage et de formation</p>
+    </header>
+
     <router-outlet></router-outlet>
 </main>
