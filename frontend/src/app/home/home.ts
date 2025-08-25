@@ -17,7 +17,7 @@ export class Home {
     readonly baseUrl = 'https://angular.dev/assets/images/tutorials/common';
     
     housingLocationList: HousingLocationInfo[] = [];
-    housingService: HousingService = inject(housingService);
+    housingService: HousingService = inject(HousingService);
 
     constructor() {
         this.housingLocationList = this.housingService.getAllHousingLocations();
