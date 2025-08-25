@@ -7,7 +7,7 @@ import { HousingLocationInfo } from '../housinglocation';
     selector: 'app-details',
     imports: [],
     templateUrl: './details.html',
-    styleUrl: './details.css'
+    styleUrls: ['./details.css'],
 })
 
 export class Details {

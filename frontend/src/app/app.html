@@ -33,13 +33,11 @@
 </style>
 
 <main class="main">
-    <app-home></app-home>
     <a [routerLink]="['/']">
         <header class="brand-name">
             <img class="brand-logo" src="/frontend/assets/logo.svg" alt="logo" aria-hidden="true">
         </header>
     </a>
-    <section class="content">
-        <router-outlet></router-outlet>
-    </section>
+    <app-home></app-home>
+    <router-outlet></router-outlet>
 </main>
