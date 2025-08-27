@@ -17,6 +17,14 @@ export class Details {
     housingLocationId = -1;
     housingLocation: HousingLocationInfo | undefined;
 
+    get isWifiAvailable(): boolean {
+        return this.housingLocation?.wifi ?? false;
+    }
+
+    get isLaundryAvailable(): boolean {
+        return this.housingLocation?.laundry ?? false;
+    }
+
     applyForm = new FormGroup({
         firstName: new FormControl(''),
         lastName: new FormControl(''),
@@ -34,5 +42,9 @@ export class Details {
     constructor() {
         this.housingLocationId = Number(this.route.snapshot.params['id']);
         this.housingLocation = this.housingService.getHousingLocationById(this.housingLocationId);
+
+        if(this.housingLocation) {
+            console.error(`Housing location not found for ID : ${this.housingLocationId}`);
+        }
     }
 }

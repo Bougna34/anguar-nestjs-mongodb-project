@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HousingLocationInfo } from './housinglocation';
+import { HousingLocation } from './housing-location/housing-location';
 
 @Injectable({
     providedIn: 'root'
@@ -106,7 +107,12 @@ export class HousingService {
     }
 
     getHousingLocationById(id: number): HousingLocationInfo | undefined {
-        return this.housingLocationList.find((housingLocation) => housingLocation.id === id);
+        const result = this.housingLocationList.find((housingLocation) => housingLocation.id === id);
+
+        if(!result) {
+            console.warn(`Aucun item ,n'a été trouvé pour l'id : ${id}`);
+        }
+        return result;
     }
 
     submitApplication(firstName: string, lastName: string, email: String) {

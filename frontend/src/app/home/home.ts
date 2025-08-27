@@ -24,13 +24,16 @@ export class Home {
     }
 
     filterResults(text: string) {
-        if(!text) {
+        if(!text || text.trim() === "") {
             this.filteredLocationList = this.housingLocationList;
             return;
         }
 
-        this.filteredLocationList = this.housingLocationList.filter((HousingLocation) =>
-            HousingLocation?.city.toLowerCase().includes(text.toLowerCase())
-        );
+        this.filteredLocationList = this.housingLocationList.filter((housingLocation) => {
+            if(!housingLocation || !housingLocation.city) {
+                return false;
+            }
+            return housingLocation.city.toLowerCase().includes(text.toLowerCase())
+        });
     }
 }
