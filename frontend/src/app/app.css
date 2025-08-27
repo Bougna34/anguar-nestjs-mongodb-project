@@ -3,6 +3,9 @@
     flex-direction: column;
     align-items: center;
     position: relative;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid black;
 }
 .brand-img {
     text-decoration:none;
